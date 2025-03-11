@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+// Selecting by ID
+
+let title = document.getElementById("title");
+console.log("Title by ID:", title);
+
+// Selecting by Class
+
+let headings = document.getElementsByClassName("heading");
+console.log("Headings by Class:", headings);
+
+let listItems = document.getElementsByClassName("list-item");
+console.log("List Items by Class:", listItems);
+
+// Selecting by Tag Name
+
+let h2Elements = document.getElementsByTagName("h2");
+console.log("H2 Elements by Tag:", h2Elements);
+
+let paragraphs = document.getElementsByTagName("p");
+console.log("Paragraphs by Tag:", paragraphs);
+
+// Selecting with Query Selector (First Match)
+
+let firstHeading = document.querySelector(".heading");
+console.log("First Heading by Query Selector:", firstHeading);
+
+let firstListItem = document.querySelector(".list-item");
+console.log("First List Item by Query Selector:", firstListItem);
+
+let inputField = document.querySelector("input[type='password']");
+console.log("Input Field by Query Selector:", inputField);
+
+// Selecting All Matching Elements
+
+let allHeadings = document.querySelectorAll("h2");
+console.log("All H2 Elements by Query Selector:", allHeadings);
+
+let allListItems = document.querySelectorAll(".list-item");
+console.log("All List Items by Query Selector:", allListItems);
+
+// Selecting Parent & Child Elements
+
+let divElement = document.querySelector("div");
+console.log("Div Element Children:", divElement.children);
+
+let firstList = document.querySelector("ul");
+console.log("UL Element Children:", firstList.children);
+
+// Selecting the Body and Changing 
+Background Color
+
+let bodyElement = document.body;
+console.log("Body Element:", bodyElement);
+bodyElement.style.backgroundColor = "blue";  // Changing background color
+
+// Using forEach on NodeList (querySelectorAll supports forEach)
+
+allHeadings.forEach((h2, index) => {
+    console.log(`H2 Element ${index + 1}:`, h2.textContent);
+});
+
+allListItems.forEach((li, index) => {
+    console.log(`List Item ${index + 1}:`, li.textContent);
+});
+
+// Convert HTMLCollection to Array and use forEach
+
+Array.from(h2Elements).forEach((h2, index) => {
+    console.log(`H2 Element from HTMLCollection ${index + 1}:`, h2.textContent);
+});
+
+Array.from(listItems).forEach((li, index) => {
+    console.log(`List Item from HTMLCollection ${index + 1}:`, li.textContent);
+});
