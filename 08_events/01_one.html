@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     alert('clicked');
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     alert('clicked');
+    //     e.stopPropagation() // isse event bubble hoke upar vale element pe nhi jayega.
+    // },false)  
+
+    //bubling inside se outside hoga hoti h phle owl vali then images vali.
+
+
+    //type, timestamp , defaultPrevented
+    // target , toELement , srcElement , currentTarget,
+    // clientX , clientY , screenX , screenY
+    // altKey, ctrlkey, shiftkey , keycode
+
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();// it will prevent it from going to google site.
+    //     console.log('google clicked');
+
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            
+            removeIt.remove()
+        }
+        //let removeIt = e.target.parentNode
+        // removeIt.remove()
+        //removeIt.parentNode.removeChild(removeIt)
+    })
+</script>
+</html>
+
+
+js is synchronus language ek ke baad ek run hoti h.
+
+single threaded hai.
+
+execution context  - 
+          execution one line of code at a time 
+console.log - 1
+console.log -2 
+
+call stack    , memory heap
+
+Blocking code     vs     non blocking code
+
+block the flow          does not block 
+of programm             execution
+
+read file sync          read file Async
+
+
+asyncronus execution \Screenshot 2025-03-12 121415.png 
